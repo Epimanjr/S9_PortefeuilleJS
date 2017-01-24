@@ -1,0 +1,12 @@
+#resultats-recherche, #portefeuille {
+    margin-top: 12px;
+}
+
+.navbar-header img {
+    width: 150px;
+    padding: 12px;
+}
+
+.navbar-text {
+    font-size: 2em;
+}
