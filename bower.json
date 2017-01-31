@@ -1,0 +1,21 @@
+{
+  "name": "S9_PortefeuilleJS",
+  "homepage": "https://github.com/Epimanjr/S9_PortefeuilleJS",
+  "authors": [
+    "Maxime BLAISE <maxime.blaise12@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "c3": "^0.4.11"
+  }
+}

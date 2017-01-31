@@ -9,14 +9,19 @@
         <!-- Insertion style -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="bower_components/c3/c3.min.css"/>
         
         <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="lib/angular.min.js"></script>
         
-        <script type="text/javascript" src="app/app.js"></script>
+        <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+        <script type="text/javascript" src="bower_components/c3/c3.min.js"></script>
+        
+        <!--<script type="text/javascript" src="app/app.js"></script> -->
+        <script type="text/javascript" src="app/graph.js"></script>
     </head>
 
-    <body ng-app="shop">
+    <body>
         <!-- Corps de la page -->
         <nav class="navbar navbar-default">
             <div class="navbar-header">
@@ -48,8 +53,14 @@
 
                             <!-- Résultats de la recherche -->
                             <div class="container" id="resultats-recherche">
-                                <div class="row">Résultat 1</div>
-                                <div class="row">Résultat ...</div>
+                                <table class="col-lg-6 col-md-6">
+                                    <tr>
+                                        <th class="col-lg-3 col-md-3">Nom</th>
+                                        <th class="col-lg-5 col-md-5">Description</th>
+                                        <th class="col-lg-2 col-md-2">Prix</th>
+                                        <th></th>
+                                    </tr>
+                                </table>
                             </div>
 
                         </div>
@@ -61,7 +72,7 @@
                             <h3 class="panel-title">Graphiques</h3>
                         </div>
                         <div class="panel-body">
-                            Panel content
+                            <div id="chart"></div>
                         </div>
                     </div>
                 </div>
