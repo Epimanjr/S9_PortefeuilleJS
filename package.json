@@ -1,0 +1,28 @@
+{
+  "name": "s9_portefeuillejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Epimanjr/S9_PortefeuilleJS.git"
+  },
+  "keywords": [
+    "portefeuille",
+    "actions"
+  ],
+  "author": "Maxime BLAISE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Epimanjr/S9_PortefeuilleJS/issues"
+  },
+  "homepage": "https://github.com/Epimanjr/S9_PortefeuilleJS#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.1"
+  }
+}
