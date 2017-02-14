@@ -6,9 +6,9 @@
 
         <!-- "Formulaire" permettant d'effectuer la recherche -->
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Entrer le nom d'une action à rechercher">
+            <input type="text" class="form-control" ng-model="inputsearch" placeholder="Entrer le nom d'une action à rechercher">
             <span class="input-group-btn">
-                <button class="btn btn-default" type="button"> 
+                <button class="btn btn-default" type="button" ng-click="search()"> 
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
             </span>
@@ -23,6 +23,17 @@
                     <th class="col-lg-5 col-md-5">Description</th>
                     <th class="col-lg-2 col-md-2">Prix</th>
                     <th></th>
+                </tr>
+
+                <tr>
+                    <td>{{action.name}}</td>
+                    <td>{{action.description}}</td>
+                    <td>{{action.price}}</td>
+                    <td>
+                        <button class="btn btn-warning" type="button" ng-click="buy()"> 
+                            Acheter <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button>
+                    </td>
                 </tr>
             </table>
         </div>

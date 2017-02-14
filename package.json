@@ -1,5 +1,5 @@
 {
-  "name": "s9_portefeuillejs",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -23,6 +23,7 @@
   "dependencies": {
     "body-parser": "^1.16.0",
     "express": "^4.14.1",
-    "mongoose": "^4.8.1"
+    "mongoose": "^4.8.1",
+    "request": "^2.79.0"
   }
 }
