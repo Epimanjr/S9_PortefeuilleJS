@@ -12,8 +12,8 @@ var db = mongoose.connect('mongodb://localhost/server');
 var Schema = mongoose.Schema;
 var StockSchema = new Schema({
     name: String,
-    symbol: String,
-    price: Number
+    price: Number,
+    description: String 
 });
 var Stock = mongoose.model('Stock', StockSchema);
 

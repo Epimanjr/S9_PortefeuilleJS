@@ -1,3 +1,4 @@
 angular.module('shop', [
-    'shop.search'
+    'shop.search',
+    'shop.portefeuille'
 ]);
