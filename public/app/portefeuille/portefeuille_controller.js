@@ -1,4 +1,4 @@
-angular.module('shop.portefeuille').controller('PortefeuilleController', ['$scope', '$http', function ($scope, $http) {
+angular.module('shop.portefeuille').controller('PortefeuilleController', ['$scope', '$http', 'Action', function ($scope, $http, Action) {
 
     $scope.$on('updateStocks', updateStocks);
 
@@ -9,11 +9,9 @@ angular.module('shop.portefeuille').controller('PortefeuilleController', ['$scop
                 $scope.actions = [];
                 console.log(response.data);
                 response.data.forEach(function (data) {
-                    var newStock = {
-                        "name": data.name,
-                        "description": data.description,
-                        "price": data.price
-                    }
+                    var newStock = new Action(data);
+                    newStock.id = data._id;
+
                     console.log(newStock);
                     $scope.actions.push(newStock);
                 });

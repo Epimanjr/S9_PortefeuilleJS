@@ -1,14 +1,20 @@
-angular.module("shop").factory(
-[
-    function() {
+angular.module('shop').factory('Action',   
+['$rootScope', '$http', function($rootScope, $http) {
         var Action = function(data) {
             this.name = data.name;
             this.description = data.description;
             this.price = data.price;
         }
         
-        Action.prototype.buy = function() {
+        /*Action.prototype.buy = function() {
             console.log("lapin");
+        }*/
+
+        Action.prototype.vendre = function() {
+            console.log("Action de vendre");
+
+            $http.delete('http://localhost:3000/stocks/' + this.id);
+            $rootScope.$broadcast('updateStocks');
         }
         
         return Action;

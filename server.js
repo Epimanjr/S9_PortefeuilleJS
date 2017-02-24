@@ -13,7 +13,7 @@ var Schema = mongoose.Schema;
 var StockSchema = new Schema({
     name: String,
     price: Number,
-    description: String 
+    description: String
 });
 var Stock = mongoose.model('Stock', StockSchema);
 
@@ -40,25 +40,37 @@ app.route('/search/:symbol').get(function (req, res, next) {
     })
 });
 
-app.route('/stocks').get(function (req, res, next) {
-    Stock.find({}, function (err, stocks) {
+app.route('/stocks/:id').delete(function (req, res, next) {
+    Stock.remove({
+        _id: req.params.id
+    }, function (err) {
         if (err) {
             return next(err);
         } else {
-            res.json(stocks);
+            return res.sendStatus(204);
         }
     })
-})
-        .post(function (req, res, next) {
-            var stock = new Stock(req.body);
-            stock.save(function (err) {
-                if (err) {
-                    return next(err);
-                } else {
-                    res.json(stock);
-                }
-            })
-        });
+});
+
+app.route('/stocks').get(function (req, res, next) {
+        Stock.find({}, function (err, stocks) {
+            if (err) {
+                return next(err);
+            } else {
+                res.json(stocks);
+            }
+        })
+    })
+    .post(function (req, res, next) {
+        var stock = new Stock(req.body);
+        stock.save(function (err) {
+            if (err) {
+                return next(err);
+            } else {
+                res.json(stock);
+            }
+        })
+    });
 
 app.listen(3000);
 console.log('Server is running;...');
