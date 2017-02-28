@@ -17,6 +17,12 @@ var StockSchema = new Schema({
 });
 var Stock = mongoose.model('Stock', StockSchema);
 
+var RecapSchema = new Schema({
+    achats: Number,
+    ventes: Number
+});
+var Recap = mongoose.model('Recap', RecapSchema);
+
 app.use(express.static(__dirname + "/public"));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
@@ -53,14 +59,14 @@ app.route('/stocks/:id').delete(function (req, res, next) {
 });
 
 app.route('/stocks').get(function (req, res, next) {
-        Stock.find({}, function (err, stocks) {
-            if (err) {
-                return next(err);
-            } else {
-                res.json(stocks);
-            }
-        })
+    Stock.find({}, function (err, stocks) {
+        if (err) {
+            return next(err);
+        } else {
+            res.json(stocks);
+        }
     })
+})
     .post(function (req, res, next) {
         var stock = new Stock(req.body);
         stock.save(function (err) {
@@ -68,6 +74,26 @@ app.route('/stocks').get(function (req, res, next) {
                 return next(err);
             } else {
                 res.json(stock);
+            }
+        })
+    });
+
+app.route('/recap').get(function (req, res, next) {
+    Recap.find({}, function (err, recaps) {
+        if (err) {
+            return next(err);
+        } else {
+            res.json(recaps);
+        }
+    })
+})
+    .post(function (req, res, next) {
+        var recap = new Recap(req.body);
+        recap.save(function (err) {
+            if (err) {
+                return next(err);
+            } else {
+                res.json(recap);
             }
         })
     });

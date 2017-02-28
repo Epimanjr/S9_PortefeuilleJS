@@ -4,6 +4,7 @@ angular.module('shop').factory('Action',
             this.name = data.name;
             this.description = data.description;
             this.price = data.price;
+            this.sellprice = Math.floor((Math.random() * 10) + 1);
         }
         
         /*Action.prototype.buy = function() {

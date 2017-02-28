@@ -23,6 +23,7 @@ angular.module("shop.search").controller('SearchController', [
                     }, function (error) {
                         console.log("Erreur, achat non sauvegardé");
                     });
+
                 }
 
                 $scope.action = action;
